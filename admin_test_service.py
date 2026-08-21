@@ -1,0 +1,626 @@
+import json
+from shared import db
+from shared.models.test import TestSeries, Test, Question
+from sqlalchemy.exc import SQLAlchemyError
+import os
+from flask import send_file, current_app, jsonify
+
+class AdminTestService:
+
+    @staticmethod
+    def attach_test_pdf(test_id, pdf_path, pdf_type='paper'):
+
+        try:
+            test = db.session.get(Test, int(test_id))
+
+            if not test:
+                return None, "Test not found"
+
+            if pdf_type == "paper":
+                test.question_paper_pdf = pdf_path
+
+            elif pdf_type == "answer_key":
+                test.answer_key_pdf = pdf_path
+
+            else:
+                return None, "Invalid pdf_type"
+
+            db.session.commit()
+
+            return test, None
+
+        except Exception as e:
+            db.session.rollback()
+            return None, f"Failed to attach PDF: {str(e)}"
+
+
+    @staticmethod
+    def create_test_series(data):
+
+        
+
+        if not isinstance(data, dict):
+            return None, "Invalid request body"
+
+
+        # Support old + new frontend payload
+        series_name = str(
+            data.get("series_name")
+            or data.get("title")
+            or ""
+        ).strip()
+
+
+        subject_id = (
+            data.get("subject_id")
+            or data.get("course_id")
+        )
+
+
+        product_kind = str(
+            data.get("product_kind")
+            or "TEST_SERIES"
+        ).strip()
+
+
+        price = data.get(
+            "price",
+            0
+        )
+
+
+        valid_until = (
+            data.get("valid_until")
+            or "2026-12-31"
+        )
+
+
+        seats_remaining = data.get(
+            "seats_remaining",
+            0
+        )
+
+
+        icon = data.get(
+            "icon",
+            "Layers"
+        )
+
+
+        short_description = (
+            data.get("short_description")
+            or data.get("description")
+            or ""
+        )
+
+
+        full_description = (
+            data.get("full_description")
+            or data.get("description")
+            or ""
+        )
+
+
+        if not series_name:
+            return None, "series_name is required"
+
+
+        if not subject_id:
+            subject_id = 1
+
+
+        try:
+            subject_id = int(subject_id)
+            price = float(price)
+            seats_remaining = int(seats_remaining)
+
+        except Exception:
+            return None, "Invalid numeric values"
+
+
+        try:
+
+            series = TestSeries(
+
+                subject_id=subject_id,
+
+                series_name=series_name,
+
+                product_kind=product_kind,
+
+                price=price,
+
+                valid_until=valid_until,
+
+                seats_remaining=seats_remaining,
+
+                icon=icon,
+
+                short_description=short_description,
+
+                full_description=full_description,
+
+                status=True
+            )
+
+
+            db.session.add(series)
+
+            db.session.commit()
+
+
+            return series, None
+
+
+        except SQLAlchemyError as e:
+
+            db.session.rollback()
+
+            print("DATABASE ERROR:", str(e))
+
+            return None, str(e)
+
+    @staticmethod
+    def get_all_test_series():
+        try:
+            return TestSeries.query.order_by(
+                TestSeries.id.desc()
+            ).all()
+
+        except SQLAlchemyError as e:
+            print("GET TEST SERIES ERROR:", str(e))
+            return []
+    
+
+    @staticmethod
+    def create_test(data):
+
+        if not isinstance(data, dict):
+            return None, "Invalid request body"
+
+
+        title = str(
+            data.get("title") or ""
+        ).strip()
+
+
+        series_id = data.get(
+            "series_id"
+        )
+
+
+        duration_minutes = data.get(
+            "duration_minutes",
+            60
+        )
+
+
+        if not title:
+            return None, "Title is required"
+
+
+        if not series_id:
+            return None, "series_id is required"
+
+
+        try:
+            series_id = int(series_id)
+
+            duration_minutes = int(
+                duration_minutes
+            )
+
+        except:
+            return None, "Invalid series_id or duration"
+
+
+
+        series = db.session.get(
+            TestSeries,
+            series_id
+        )
+
+
+        if not series:
+            return None, "Test series not found"
+
+
+
+        try:
+
+            test = Test(
+
+                title=title,
+
+                series_id=series_id,
+
+                duration_minutes=duration_minutes
+
+            )
+
+
+            db.session.add(test)
+
+            db.session.commit()
+
+
+            return test, None
+
+
+        except SQLAlchemyError as e:
+
+            db.session.rollback()
+
+            return None, str(e)
+
+
+
+    @staticmethod
+    def get_answer_key(test_id):
+
+        try:
+            test_id = int(test_id)
+
+        except:
+            return None, "Invalid test_id"
+
+
+
+        test = db.session.get(
+            Test,
+            test_id
+        )
+
+
+        if not test:
+            return None, "Test not found"
+
+
+
+        questions = Question.query.filter_by(
+            test_id=test_id
+        ).all()
+
+
+
+        return {
+
+            "test_id": test.id,
+
+            "test_title": test.title,
+
+            "answer_key_pdf": test.answer_key_pdf,
+
+            "answer_key": [
+
+                {
+
+                    "question_id": q.id,
+
+                    "question_text": q.question_text,
+
+                    "options": {
+
+                        "A": q.option_a,
+
+                        "B": q.option_b,
+
+                        "C": q.option_c,
+
+                        "D": q.option_d
+
+                    },
+
+                    "correct_option": q.correct_option
+
+                }
+
+                for q in questions
+
+            ]
+
+        }, None
+
+
+
+    @staticmethod
+    def upload_questions(test_id, data):
+
+        try:
+            test_id = int(test_id)
+
+        except:
+            return None, "Invalid test id"
+
+
+
+        test = db.session.get(
+            Test,
+            test_id
+        )
+
+
+        if not test:
+            return None, "Test not found"
+
+
+
+        questions = data.get(
+            "questions",
+            []
+        )
+
+
+        if not questions:
+            return None, "Questions required"
+
+
+
+        created = []
+
+
+        try:
+
+            for item in questions:
+
+                if not item.get("question_text"):
+                    continue
+
+
+                q = Question(
+
+                    test_id=test_id,
+
+                    question_text=item.get(
+                        "question_text"
+                    ),
+
+                    option_a=item.get(
+                        "option_a"
+                    ),
+
+                    option_b=item.get(
+                        "option_b"
+                    ),
+
+                    option_c=item.get(
+                        "option_c"
+                    ),
+
+                    option_d=item.get(
+                        "option_d"
+                    ),
+
+                    correct_option=item.get(
+                        "correct_option"
+                    ),
+
+                    explanation=item.get(
+                        "explanation"
+                    )
+
+                )
+
+
+                db.session.add(q)
+
+                created.append(q)
+
+
+
+            db.session.commit()
+
+
+            return created, None
+
+
+
+        except SQLAlchemyError as e:
+
+            db.session.rollback()
+
+            return None, str(e)
+            
+    @staticmethod
+    def get_all_tests():
+        return Test.query.order_by(Test.id.desc()).all()
+    
+    @staticmethod
+    def get_test(test_id):
+
+        return Test.query.get(test_id)
+
+
+    @staticmethod
+    def update_test(test_id, data):
+
+        test = Test.query.get(test_id)
+
+        if not test:
+            return None, "Quiz not found"
+
+
+        if "title" in data:
+            test.title = data["title"]
+
+
+        if "duration_minutes" in data:
+            try:
+                test.duration_minutes = int(
+                    data["duration_minutes"]
+                )
+            except:
+                return None, "Invalid duration"
+
+
+        if "series_id" in data:
+            try:
+                series_id = int(data["series_id"])
+
+                series = TestSeries.query.get(series_id)
+
+                if not series:
+                    return None, "Test series not found"
+
+                test.series_id = series_id
+
+            except:
+                return None, "Invalid series_id"
+
+
+        try:
+            db.session.commit()
+            return test, None
+
+        except Exception as e:
+            db.session.rollback()
+            return None, str(e)
+
+
+
+    @staticmethod
+    def delete_test(test_id):
+
+        test = Test.query.get(test_id)
+
+        if not test:
+            return False, "Quiz not found"
+
+
+        try:
+            db.session.delete(test)
+            db.session.commit()
+
+            return True, None
+
+        except Exception as e:
+            db.session.rollback()
+            return False, str(e)
+    
+    @staticmethod
+    def get_uploaded_papers():
+
+        tests = Test.query.filter(
+            Test.question_paper_pdf.isnot(None)
+        ).order_by(
+            Test.id.desc()
+        ).all()
+
+        return [
+            {
+                "id": test.id,
+
+                "title": test.title,
+
+                "series_id": test.series_id,
+
+                # TestSeries se subject directly mil jayega
+                "subject_id": (
+                    test.series.subject_id
+                    if test.series
+                    else None
+                ),
+
+                # Series ka actual name bhi backend se bhejo
+                "series_name": (
+                    test.series.series_name
+                    if test.series
+                    else None
+                ),
+
+                "question_paper_pdf": test.question_paper_pdf,
+
+                "question_paper_name": (
+                    os.path.basename(test.question_paper_pdf)
+                    if test.question_paper_pdf
+                    else None
+                ),
+    
+                "answer_key_pdf": test.answer_key_pdf,
+
+                "duration_minutes": test.duration_minutes,
+
+                "total_questions": len(test.questions),
+
+                "has_question_paper": bool(
+                    test.question_paper_pdf
+                ),
+
+                "has_answer_key": bool(
+                    test.answer_key_pdf
+                )
+            }
+            for test in tests
+        ]
+        
+    @staticmethod
+    def get_uploaded_answer_keys():
+
+        tests = Test.query.filter(
+            Test.answer_key_pdf.isnot(None)
+        ).order_by(
+            Test.id.desc()
+        ).all()
+
+        return [
+            {
+                "id": test.id,
+                "title": test.title,
+                "series_id": test.series_id,
+                "answer_key_pdf": test.answer_key_pdf
+            }
+            for test in tests
+        ]
+    
+
+    @staticmethod
+    def download_paper(paper_id):
+
+        test = Test.query.get(paper_id)
+
+        if not test:
+            return jsonify({
+                "success": False,
+             "message": "Paper not found"
+            }), 404
+
+
+        if not test.question_paper_pdf:
+            return jsonify({
+                "success": False,
+                "message": "PDF not uploaded"
+            }), 404
+
+
+        file_path = test.question_paper_pdf.replace(
+            "/static/",
+            "static/"
+        )
+
+
+        if not os.path.exists(file_path):
+            return jsonify({
+                "success": False,
+                "message": "File missing on server",
+                "path": file_path
+            }), 404
+
+
+        return send_file(
+            file_path,
+            mimetype="application/pdf",
+            as_attachment=False,
+            download_name=os.path.basename(file_path)
+        )
+    @staticmethod
+    def delete_test_series(series_id):
+
+        series = TestSeries.query.get(series_id)
+
+        if not series:
+            return None, "Test series not found"
+
+        db.session.delete(series)
+        db.session.commit()
+
+        return series, None

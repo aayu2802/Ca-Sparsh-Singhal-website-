@@ -1,0 +1,2001 @@
+CREATE SERIES PAYLOAD: {'series_name': 'erp', 'subject_id': 1, 'product_kind': 'single', 'price': 2, 'valid_until': '2026-08-12', 'seats_remaining': 1, 'icon': 'Layers', 'short_description': 'de f w g r he t y', 'full_description': 'a bccnvrlw wjlefnrnvlo3nwl defjnovnogr'}
+CREATE SERIES PAYLOAD: {'series_name': 'erp', 'subject_id': 2, 'product_kind': 'single', 'price': 1, 'valid_until': '2026-08-12', 'seats_remaining': 1, 'icon': 'Layers', 'short_description': 'de f w g r he t y', 'full_description': 'dwefagr fg34hy5 grthy qdgt'}
+CREATE SERIES PAYLOAD: {'series_name': 'bwvhwhvws', 'subject_id': 2, 'product_kind': 'series', 'price': 1, 'valid_until': '2026-08-19', 'seats_remaining': 11, 'icon': 'Layers', 'short_description': 'bwhdw duwgdug dgdu w yd wdgy w fdywfd', 'full_description': 'wdjgw ydwy dywdyw dywtd wt d ctw cdtwc d'}
+[2026-08-12 12:51:24,429] ERROR in app: Exception on /api/test-series [GET]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_main/routes.py", line 47, in get_all_test_series
+    return MainTestController.fetch_all_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_main/controllers/main_test_controller.py", line 8, in fetch_all_series
+    series = MainTestService.get_all_series()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_main/services/main_test_service.py", line 9, in get_all_series
+    return TestSeries.query.all()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1826, in all
+    return self._allrows()
+           ^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 587, in _allrows
+    rows = self._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1733, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 2337, in _fetchall_impl
+    return list(self.iterator)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 220, in chunks
+    fetch = cursor._raw_all_rows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 577, in _raw_all_rows
+    make_row = self._row_getter
+               ^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 1234, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 510, in _row_getter
+    key_to_index = metadata._key_to_index
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1472, in _key_to_index
+    self._we_dont_return_rows()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1452, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+[ERROR] [UID:1180][3394820] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1488, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1479, in wsgi_app
+    ctx.pop(error)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 426, in pop
+    app_ctx.pop(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 262, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1334, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_sqlalchemy/extension.py", line 448, in _teardown_session
+    self.session.remove()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2529, in close
+    self._close_impl(invalidate=False)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2598, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1422, in close
+    transaction.close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2599, in close
+    self._do_close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2737, in _do_close
+    self._close_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2723, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2715, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1132, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+JWT MISSING TOKEN: Missing Authorization Header
+JWT EXPIRED TOKEN
+[2026-08-12 13:12:04,636] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:06,723] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:07,595] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:07,965] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:08,258] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:08,551] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:08,833] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:09,532] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:12,177] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:21,422] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:22,159] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:12:22,934] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:13:51,284] ERROR in app: Exception on /api/test-series [GET]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_main/routes.py", line 47, in get_all_test_series
+    return MainTestController.fetch_all_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_main/controllers/main_test_controller.py", line 8, in fetch_all_series
+    series = MainTestService.get_all_series()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_main/services/main_test_service.py", line 9, in get_all_series
+    return TestSeries.query.all()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1826, in all
+    return self._allrows()
+           ^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 587, in _allrows
+    rows = self._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1733, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 2337, in _fetchall_impl
+    return list(self.iterator)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 220, in chunks
+    fetch = cursor._raw_all_rows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 580, in _raw_all_rows
+    return [make_row(row) for row in rows]
+            ^^^^^^^^^^^^^
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 77, in sqlalchemy.cyextension.resultproxy._apply_processors
+IndexError: tuple index out of range
+[2026-08-12 13:13:58,018] ERROR in app: Exception on /api/test-series [GET]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_main/routes.py", line 47, in get_all_test_series
+    return MainTestController.fetch_all_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_main/controllers/main_test_controller.py", line 8, in fetch_all_series
+    series = MainTestService.get_all_series()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_main/services/main_test_service.py", line 9, in get_all_series
+    return TestSeries.query.all()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1826, in all
+    return self._allrows()
+           ^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 587, in _allrows
+    rows = self._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1733, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 2337, in _fetchall_impl
+    return list(self.iterator)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 220, in chunks
+    fetch = cursor._raw_all_rows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 580, in _raw_all_rows
+    return [make_row(row) for row in rows]
+            ^^^^^^^^^^^^^
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 77, in sqlalchemy.cyextension.resultproxy._apply_processors
+IndexError: tuple index out of range
+JWT EXPIRED TOKEN
+CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: JWT EXPIRED TOKEN
+[2026-08-12 13:37:30,189] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:37:32,732] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:37:33,082] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:37:33,620] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+[2026-08-12 13:37:34,328] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 596: ordinal not in range(128)
+JWT EXPIRED TOKEN
+CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: JWT EXPIRED TOKEN
+CREATE SERIES PAYLOAD: {'series_name': 'Thinklly', 'subject_id': 2, 'product_kind': 'series', 'price': 111, 'valid_until': '2026-08-19', 'seats_remaining': 11, 'icon': 'Layers', 'short_description': 'fhfhfbef ejbujebd  d ehdbed e djebdbdee', 'full_description': 'jebc eed eff w d wd w ef w f e rf e rf ef'}
+[2026-08-12 14:11:29,825] ERROR in app: Exception on /api/admin/papers [GET]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 161, in get_papers
+    return AdminTestController.fetch_uploaded_papers()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 174, in fetch_uploaded_papers
+    papers = AdminTestService.get_uploaded_papers()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 506, in get_uploaded_papers
+    ).all()
+      ^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1826, in all
+    return self._allrows()
+           ^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 587, in _allrows
+    rows = self._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1733, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 2337, in _fetchall_impl
+    return list(self.iterator)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 220, in chunks
+    fetch = cursor._raw_all_rows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 577, in _raw_all_rows
+    make_row = self._row_getter
+               ^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 1234, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 510, in _row_getter
+    key_to_index = metadata._key_to_index
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1472, in _key_to_index
+    self._we_dont_return_rows()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1452, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+[ERROR] [UID:1180][4020109] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1488, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1479, in wsgi_app
+    ctx.pop(error)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 426, in pop
+    app_ctx.pop(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 262, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1334, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_sqlalchemy/extension.py", line 448, in _teardown_session
+    self.session.remove()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2529, in close
+    self._close_impl(invalidate=False)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2598, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1422, in close
+    transaction.close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2599, in close
+    self._do_close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2737, in _do_close
+    self._close_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2723, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2715, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1132, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+JWT EXPIRED TOKEN
+JWT MISSING TOKEN: Missing Authorization Header
+JWT EXPIRED TOKEN
+[2026-08-12 16:39:26,321] ERROR in app: Exception on /api/admin/papers [GET]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 161, in get_papers
+    return AdminTestController.fetch_uploaded_papers()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 174, in fetch_uploaded_papers
+    papers = AdminTestService.get_uploaded_papers()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 506, in get_uploaded_papers
+    ).all()
+      ^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1826, in all
+    return self._allrows()
+           ^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 587, in _allrows
+    rows = self._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1733, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 2337, in _fetchall_impl
+    return list(self.iterator)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 220, in chunks
+    fetch = cursor._raw_all_rows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 577, in _raw_all_rows
+    make_row = self._row_getter
+               ^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 1234, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 510, in _row_getter
+    key_to_index = metadata._key_to_index
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1472, in _key_to_index
+    self._we_dont_return_rows()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1452, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+[ERROR] [UID:1180][1010569] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1488, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1479, in wsgi_app
+    ctx.pop(error)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 426, in pop
+    app_ctx.pop(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 262, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1334, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_sqlalchemy/extension.py", line 448, in _teardown_session
+    self.session.remove()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2529, in close
+    self._close_impl(invalidate=False)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2598, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1422, in close
+    transaction.close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2599, in close
+    self._do_close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2737, in _do_close
+    self._close_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2723, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2715, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1132, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+JWT EXPIRED TOKEN
+[2026-08-12 16:57:13,108] ERROR in app: Exception on /api/admin/papers [GET]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 161, in get_papers
+    return AdminTestController.fetch_uploaded_papers()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 174, in fetch_uploaded_papers
+    papers = AdminTestService.get_uploaded_papers()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 542, in get_uploaded_papers
+    "total_questions": len(test.questions),
+                           ^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 569, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1096, in get
+    value = self._fire_loader_callables(state, key, passive)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1131, in _fire_loader_callables
+    return self.callable_(state, passive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 978, in _load_for_state
+    return self._emit_lazyload(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 1145, in _emit_lazyload
+    result = result.unique().scalars().all()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1826, in all
+    return self._allrows()
+           ^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 587, in _allrows
+    rows = self._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1733, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 2337, in _fetchall_impl
+    return list(self.iterator)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 220, in chunks
+    fetch = cursor._raw_all_rows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 577, in _raw_all_rows
+    make_row = self._row_getter
+               ^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 1234, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 510, in _row_getter
+    key_to_index = metadata._key_to_index
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1472, in _key_to_index
+    self._we_dont_return_rows()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1452, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+[ERROR] [UID:1180][1168050] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1488, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1479, in wsgi_app
+    ctx.pop(error)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 426, in pop
+    app_ctx.pop(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 262, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1334, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_sqlalchemy/extension.py", line 448, in _teardown_session
+    self.session.remove()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2529, in close
+    self._close_impl(invalidate=False)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2598, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1422, in close
+    transaction.close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2599, in close
+    self._do_close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2737, in _do_close
+    self._close_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2723, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2715, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1132, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+CREATE SERIES PAYLOAD: {'series_name': 'Thinklly', 'subject_id': 2, 'product_kind': 'series', 'price': 111, 'valid_until': '2026-08-19', 'seats_remaining': 0, 'icon': 'Layers', 'short_description': 'errgef efdfw ew d w e 2e d 2d', 'full_description': 'edwdw d wed 3e d ed w d w ed 3 4d 3 d wed'}
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+[2026-08-13 11:51:59,304] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 601: ordinal not in range(128)
+[2026-08-13 11:52:01,152] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 601: ordinal not in range(128)
+[2026-08-13 11:52:04,414] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 601: ordinal not in range(128)
+CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: [2026-08-13 11:57:34,557] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 603: ordinal not in range(128)
+CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: {'series_name': 'Thinklly', 'subject_id': 2, 'product_kind': 'single', 'price': 111, 'valid_until': '2026-08-20', 'seats_remaining': 11, 'icon': 'Layers', 'short_description': 'bwhdw duwgdug dgdu w yd wdgy w fdywfd', 'full_description': 'dewed wed we d wed w ed w ed we d we dw ed wed'}
+JWT EXPIRED TOKEN
+[2026-08-13 12:47:40,971] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 603: ordinal not in range(128)
+[2026-08-13 12:47:47,208] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 603: ordinal not in range(128)
+[2026-08-13 12:47:52,942] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 603: ordinal not in range(128)
+JWT EXPIRED TOKEN
+CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: [2026-08-13 13:55:35,579] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+[2026-08-13 13:55:37,897] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+[2026-08-13 13:55:38,639] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+[2026-08-13 13:55:39,042] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+[2026-08-13 13:55:39,201] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+[2026-08-13 13:55:39,389] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+[2026-08-13 13:55:39,581] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+[2026-08-13 13:55:39,716] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+[2026-08-13 13:55:42,133] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+[2026-08-13 13:55:44,422] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 549: ordinal not in range(128)
+JWT EXPIRED TOKEN
+CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: CREATE SERIES PAYLOAD: {'series_name': 'DT UNIT TEST SERIES', 'subject_id': 2, 'product_kind': 'series', 'price': 0, 'valid_until': '2026-08-20', 'seats_remaining': 27, 'icon': 'Layers', 'short_description': 'The DT syllabus is spread across 5 unit', 'full_description': '1. Que Papers set be CA Sparsh Si.'}
+[2026-08-13 14:40:29,071] ERROR in app: Exception on /api/admin/test-series [POST]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 149, in create_test_series
+    return AdminTestController.create_series()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 41, in create_series
+    series, error = AdminTestService.create_test_series(data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 39, in create_test_series
+    print("CREATE SERIES PAYLOAD:", data)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2013' in position 550: ordinal not in range(128)
+JWT EXPIRED TOKEN
+CREATE SERIES PAYLOAD: JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+OSError: LSAPI: File error
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+JWT EXPIRED TOKEN
+Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/pool/base.py", line 1441, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 455, in _read_ok_packet
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2014, 'Command Out of Sync')
+[2026-08-15 15:02:41,073] ERROR in app: Exception on /api/admin/papers [GET]
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/shared/utils/decorators.py", line 60, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/routes.py", line 161, in get_papers
+    return AdminTestController.fetch_uploaded_papers()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/controllers/admin_test_controller.py", line 174, in fetch_uploaded_papers
+    papers = AdminTestService.get_uploaded_papers()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/admin.casparshsinghal.in/backend/app_admin/services/admin_test_service.py", line 520, in get_uploaded_papers
+    if test.series
+       ^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 569, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1096, in get
+    value = self._fire_loader_callables(state, key, passive)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1131, in _fire_loader_callables
+    return self.callable_(state, passive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 978, in _load_for_state
+    return self._emit_lazyload(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 1079, in _emit_lazyload
+    return loading.load_on_pk_identity(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 695, in load_on_pk_identity
+    session.execute(
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2373, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2271, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/context.py", line 309, in orm_execute_statement
+    return cls.orm_setup_cursor_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/context.py", line 616, in orm_setup_cursor_result
+    return loading.instances(result, querycontext)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 133, in instances
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 115, in instances
+    query_entity.row_processor(context, cursor)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/context.py", line 2786, in row_processor
+    _instance = loading._instance_processor(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/loading.py", line 878, in _instance_processor
+    primary_key_getter = result._tuple_getter(pk_cols)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 1238, in _tuple_getter
+    return self._metadata._row_as_tuple_getter(keys)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 191, in _row_as_tuple_getter
+    indexes = self._indexes_for_keys(keys)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/result.py", line 168, in _indexes_for_keys
+    raise NotImplementedError()
+NotImplementedError
+[ERROR] [UID:1180][4118859] wsgiAppHandler pApp->start_response() return NULL.
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1488, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1479, in wsgi_app
+    ctx.pop(error)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 426, in pop
+    app_ctx.pop(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/ctx.py", line 262, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask/app.py", line 1334, in do_teardown_appcontext
+    self.ensure_sync(func)(exc)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/flask_sqlalchemy/extension.py", line 448, in _teardown_session
+    self.session.remove()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 258, in remove
+    self.registry().close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2529, in close
+    self._close_impl(invalidate=False)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 2598, in _close_impl
+    transaction.close(invalidate)
+  File "<string>", line 2, in close
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/orm/session.py", line 1422, in close
+    transaction.close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2599, in close
+    self._do_close()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2737, in _do_close
+    self._close_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2723, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2715, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1132, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/base.py", line 1130, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib64/python3.12/site-packages/sqlalchemy/engine/default.py", line 712, in do_rollback
+    dbapi_connection.rollback()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 493, in rollback
+    self._read_ok_packet()
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 453, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 744, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/knlikqmu/virtualenv/admin.casparshsinghal.in/backend/3.12/lib/python3.12/site-packages/pymysql/connections.py", line 798, in _read_bytes
+    raise err.OperationalError(
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+JWT EXPIRED TOKEN
