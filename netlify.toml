@@ -1,0 +1,39 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Vite inlines VITE_* at BUILD time, so these must exist before the build runs — which is
+# exactly what was missing. .env.local is git-ignored (*.local), so Netlify never saw the
+# flag, the mock layer was dead-code-eliminated out of the bundle, and every request went
+# to a real /api that doesn't exist. Hence the 404 on login.
+[build.environment]
+  NODE_VERSION = "22"
+
+  # Demo mode: axios-mock-adapter answers every request from src/mocks/, in-browser.
+  # No server, no database, nothing to seed.
+  VITE_USE_MOCKS = "true"
+
+  # Ignored entirely while mocks are on. When the backend is live:
+  #   VITE_USE_MOCKS = "false"
+  #   VITE_API_BASE_URL = "https://api.casparshsingal.com"
+  # Redeploy. No code changes — that's the point of gating on the env var.
+  VITE_API_BASE_URL = "/api"
+
+# SPA fallback. Without this, a hard refresh on /series asks Netlify for a /series/index.html
+# that doesn't exist — a SECOND, unrelated 404 that bites the moment anyone reloads a
+# sub-page or opens a deep link.
+#
+# Note for when mocks go off: this rule also swallows /api/* into index.html, so a missing
+# backend would return 200 HTML instead of a clean 404 and axios would fail on JSON parsing.
+# If that ever gets confusing, add a `[[redirects]] from = "/api/*" ... status = 404` above
+# this one, or proxy /api/* to the real host.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# It's an internal admin tool — keep it out of search results.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

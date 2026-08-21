@@ -1,0 +1,4 @@
+# SPA fallback. Vite copies public/ into dist/, so this survives a drag-and-drop deploy of
+# the dist folder — netlify.toml at the repo root does NOT. Both say the same thing; keep
+# them in sync. Without it, a hard refresh on /series 404s.
+/*  /index.html  200

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700&family=Geist+Mono:wght@400..500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Admin — CA Sparsh Singhal</title>
+    <script type="module" crossorigin src="/assets/index-D8oVVhHp.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/Button-CRE12NpU.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DcD5itS3.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!--
+      Vite SOURCE entry — not a deploy artifact.
+
+      A previous deploy copied dist/index.html over this file, leaving it pointing at
+      hashed build chunks instead of at the app. Two things followed: `vite build` had no
+      entry module, and the live shell preloaded a chunk that was not in the docroot, which
+      the server answered with index.html — hence "Expected a JavaScript-or-Wasm module
+      script but the server responded with a MIME type of text/html".
+
+      Deploy is: `npm run build`, then copy dist/index.html AND dist/assets/ to the docroot
+      together, replacing the old assets folder wholesale. Never copy one without the
+      other, and never copy back over this file.
+
+      IT HAPPENED AGAIN. The entry was pointing at /assets/index-DLGkz7U4.js — a stale
+      built bundle sitting in the repo root — so `vite build` bundled LAST DEPLOY'S OUTPUT
+      instead of src/, and the dev server loaded it too. Every source change looked like
+      it did nothing. The repo-root assets/ folder is that dead deploy copy; nothing
+      references it now.
+    -->
+  </body>
+</html>

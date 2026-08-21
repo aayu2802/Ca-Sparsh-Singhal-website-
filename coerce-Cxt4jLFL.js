@@ -1,0 +1,1 @@
+import{d as e,t}from"./schemas-DO9zELI1.js";function n(n){return e(t,n)}export{n as t};
